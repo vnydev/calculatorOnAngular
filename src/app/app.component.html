@@ -1,0 +1,41 @@
+<div class="main">
+    <div class="calc">
+        <div class="selection">
+            <span *ngIf="value_a || value_b " >{{value_a}} {{selectedMethod}} {{value_b}} </span>
+            <span *ngIf="total >= 0 && !value_a && !value_b "> {{ total}} </span>      
+        </div>
+        <table >
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button (click)="reset()">AC</button> </td>
+          </tr>
+          <tr>
+            <td> <button (click)="selectN('7', 'value')"> 7</button></td>
+            <td> <button (click)="selectN('8', 'value')"> 8</button></td>
+            <td> <button (click)="selectN('9', 'value')"> 9</button></td>
+            <td> <button class="method" (click)="callMethod('*', 'oprator')"> *</button></td>
+          </tr>
+          <tr>
+            <td> <button (click)="selectN('4', 'value')"> 4</button></td>
+            <td> <button (click)="selectN('5', 'value')"> 5</button></td>
+            <td> <button (click)="selectN('6', 'value')"> 6</button></td>
+            <td> <button class="method" (click)="callMethod('-', 'oprator')"> - </button></td>
+         
+          </tr>
+          <tr>
+            <td> <button (click)="selectN('1', 'value')"> 1</button></td>
+            <td> <button (click)="selectN('2', 'value')"> 2</button></td>
+            <td> <button (click)="selectN('3', 'value')"> 3</button></td>
+            <td> <button class="method" (click)="callMethod('+', 'oprator')"> + </button></td>
+          </tr>
+          <tr>
+            <td> <button (click)="selectN('0', 'value')"> 0</button></td>
+            <td> <button (click)="selectN('.', 'value')"> .</button></td>
+            <td> <button class="method" (click)="equalTo('=', 'oprator')"> = </button></td>
+            <td> <button class="method" (click)="callMethod('/', 'oprator')"> /</button></td>
+          </tr>
+        </table>
+    </div>
+</div>
